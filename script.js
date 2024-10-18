@@ -72,10 +72,10 @@ function handleSubmit(event){
         passwordError.innerText = "password is required";
     }
     else if(password.value.length < 8 || password.value.length > 24){
-        passwordError.innerText = "Password should have the length in between 5 to 12 characters."
+        passwordError.innerText = "Password should have the length in between 8 to 24 characters."
     }
     else if(!passwordPattern.test(password.value)){
-        passwordError.innerText = "Password should not contains any space and must have altest one uppercase and one smallcase character";
+        passwordError.innerText = "Password should not contain any space and must have altest one uppercase and one smallcase character";
     }
     else if(!alphanumericPattern.test(password.value)){
         password.innerText = "Password must be alphanumeric";
@@ -89,6 +89,10 @@ function handleSubmit(event){
         confirmPassError.innerText = "Confirm Password must match Password";
     }
     else{
+        usernameError.innerText = "";
+        emailError.innerText = "";
+        passwordError.innerText = "";
+        confirmPassError.innerText = "";
         console.log("Form is Submitted!");
         console.log("Username:",username.value ,"\nEmail:", email.value ,"\nPassword:","\nConfirm Password:", password.value , confirmPass.value)
         contentContainer.innerText = `Username: ${username.value} ,\nEmail: ${email.value} ,\nPassword: ${password.value},\nConfirm Password:${confirmPass.value}`;
